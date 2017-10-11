@@ -8,7 +8,18 @@
     <%= javascript_include_tag 'application' %>
   </head>
 
+  <ul id="mainPage">
+    <h2>
+      <li><%= link_to "Add New Comic", new_comic_path %><br></li>
+      <li><%= link_to "All Comics",  comics_path %></li>
+      <li><%= link_to "Home", root_path %></li>
+    </h2>
+  </ul>
+
   <body>
+    <% if flash.any? %>
+      <%= flash[:notice] %>
+    <% end %>
     <%= yield %>
   </body>
 </html>

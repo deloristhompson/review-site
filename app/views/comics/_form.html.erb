@@ -1,0 +1,50 @@
+<h3>Add a New Comic</h3>
+<%= form_for @comic do  |f| %>
+  <% if @comic.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@comic.errors.count, "error") %>
+          prohibited this comic from being saved:
+      </h2>
+
+      <ul>
+        <% @comic.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+  <% end %>
+
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :illustrator %><br>
+    <%= f.text_field :illustrator %>
+  </p>
+
+  <p>
+    <%= f.label :publisher %><br>
+    <%= f.text_field :publisher %>
+  </p>
+
+  <p>
+    <%= f.label :year_published, "Year Published"%><br>
+    <%= f.text_field :year_published %>
+  </p>
+
+  <p>
+    <%= f.label :ASIN, "ASIN" %><br>
+    <%= f.text_field :ASIN %>
+  </p>
+
+  <p>
+    <%= f.label :condition %><br>
+    <%= f.text_field :condition %>
+  </p>
+
+  <p>
+    <%= f.submit "Submit" %>
+  </p>
+<% end %>
