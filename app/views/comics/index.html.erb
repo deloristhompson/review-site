@@ -1,0 +1,7 @@
+<h3>Comics</h3>
+<div class="index">
+
+<% @comics.each do |comic| %>
+  <%= link_to comic.title, comic_path(comic) %><br>
+<% end %>
+</div>
